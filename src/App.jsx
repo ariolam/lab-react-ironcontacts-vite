@@ -48,6 +48,16 @@ function App() {
         setContacts(strAscending);
     };
 
+    const deleteContact = (contactId) => {
+        const filteredContacts = contacts.filter((filterContact) => {
+            if (filterContact.id !== contactId) {
+                return true;
+            }
+        });
+        console.log("filtered contacts", filteredContacts);
+        setContacts(filteredContacts);
+    };
+
     return (
         <div className="App">
             <h1>LAB | React IronContacts</h1>
